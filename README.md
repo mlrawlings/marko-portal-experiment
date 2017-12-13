@@ -1,52 +1,28 @@
-# Marko Starter Demo
-This repo demos the basic features of [`marko-starter`](https://github.com/marko-js/marko-starter).
+# A Portal Component for Marko
 
-## Install
-
-```bash
-npm install
+By default, the portal renders into `document.body`:
+```marko
+<portal>
+   ...content here...
+</portal>
 ```
 
-## Starting the server
-
-```bash
-npm start
+You can set a custom target using a DOM id:
+```marko
+<portal target="some-id">
+   ...content here...
+</portal>
 ```
 
-Start the server in production mode (minification enabled, etc.):
-
-```bash
-NODE_ENV=production npm start
+Or by passing a DOM Node:
+```marko
+<portal target=someNode>
+   ...content here...
+</portal>
 ```
 
-## Build a static site
-Build the project in production mode:
+# Demo
 
-```bash
-npm run build
-```
+Run `npm start` to start the server and visit `http://localhost:8080/`
 
-By default, the generated static site will be placed in `dist/`.
-
-## Feature Demos
-
-### Live reload
-
-Change a file and the server will restart and the browser will refresh.  Hot reload is enabled for certain files.
-
-### Components
-
-See example components and how they can be scoped to pages or the whole site.
-
-### Routing
-
-Learn to create routes and use route parameters.
-
-### Layouts
-
-Learn to create components that can be passed content and include that content in their own template.
-
-### Styles and Images
-
-Learn how to use styles within a component and how to use resources (like images) in a component.
-
+The `<counter>` component uses `<portal>` to put a portal that includes the count at the bottom of the page (scroll down).  When the count reaches 3, it will move into the first section (`id="first"`) and when the count reaches 10, it will be removed.

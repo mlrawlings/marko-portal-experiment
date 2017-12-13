@@ -16,6 +16,9 @@ style {
     font-size:1em;
     padding:0.5em;
   }
+  .loud {
+    color:#09f;
+  }
 }
 
 <div.count>
@@ -24,3 +27,6 @@ style {
 <button.example-button on-click('increment')>
   Click me!
 </button>
+<portal if(state.count < 10) target=(state.count >= 3 && 'first')>
+  <h1.loud>Portal Content ${state.count}</h1>
+</portal>
